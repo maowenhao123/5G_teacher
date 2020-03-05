@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Tool : NSObject
 
 + (UIImage *)getVideoPreViewImage:(NSURL *)path;
++ (NSAttributedString *)getAttributedTextWithTag:(NSString *)tag contentText:(NSString *)contentText;
++ (UIImage *)imageWithUIView:(UIView *)view;
 
 @end
 

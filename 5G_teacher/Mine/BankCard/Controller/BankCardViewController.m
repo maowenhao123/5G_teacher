@@ -9,6 +9,7 @@
 #import "BankCardViewController.h"
 #import "AddBankCardViewController.h"
 #import "BankCardTableViewCell.h"
+#import "BankCardModel.h"
 
 @interface BankCardViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -40,7 +41,7 @@
         [MBProgressHUD hideHUDForView:self.view];
         if (SUCCESS) {
             self.bankCardModel = [BankCardModel mj_objectWithKeyValues:json[@"data"]];
-            if (MStringIsEmpty(self.bankCardModel.bankName)) {
+            if (MStringIsEmpty(self.bankCardModel.bankCardNo)) {
                 self.tableView.hidden = YES;
                 self.noDataView.hidden = NO;
             }else
@@ -62,6 +63,8 @@
 #pragma mark - 布局子视图
 - (void)setupUI
 {
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"换卡" style:UIBarButtonItemStyleDone target:self action:@selector(addButtonDidClick)];
+    
     [self.view addSubview:self.noDataView];
     [self.view addSubview:self.tableView];
 }

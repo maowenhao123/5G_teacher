@@ -8,6 +8,7 @@
 
 #import "MineHeaderView.h"
 #import "UserInfoViewController.h"
+#import "WithdrawViewController.h"
 #import "FundsDetailViewController.h"
 #import "MyCourseViewController.h"
 #import "ChooseCourseTypeViewController.h"
@@ -81,8 +82,8 @@
     self.moneyLabel.attributedText = moneyAttStr;
     
     //按钮
-    CGFloat buttonW = 65;
-    CGFloat buttonH = 30;
+    CGFloat buttonW = 72;
+    CGFloat buttonH = 32;
     for (int i = 0; i < 2; i++) {
         UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.tag = i;
@@ -94,9 +95,9 @@
             [button setTitle:@"提现" forState:UIControlStateNormal];
         }
         [button setTitleColor:MBlackTextColor forState:UIControlStateNormal];
-        button.titleLabel.font = [UIFont systemFontOfSize:14];
+        button.titleLabel.font = [UIFont systemFontOfSize:15];
         button.layer.cornerRadius = buttonH / 2;
-        button.layer.borderColor = MColor(213, 213, 213, 1).CGColor;
+        button.layer.borderColor = MGrayLineColor.CGColor;
         button.layer.borderWidth = 1;
         [button addTarget:self action:@selector(fundsButtonDidClick:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:button];
@@ -156,8 +157,12 @@
 
 - (void)fundsButtonDidClick:(UIButton *)button
 {
-    FundsDetailViewController * fundsDetailVC = [[FundsDetailViewController alloc] init];
-    [self.viewController.navigationController pushViewController:fundsDetailVC animated:YES];
+    if (button.tag == 0) {
+        [self.viewController.navigationController pushViewController:[FundsDetailViewController new] animated:YES];
+    }else if (button.tag == 1)
+    {
+        [self.viewController.navigationController pushViewController:[WithdrawViewController new] animated:YES];
+    }
 }
 
 - (void)courseDidTap:(UITapGestureRecognizer *)sender

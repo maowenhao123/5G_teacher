@@ -7,8 +7,9 @@
 //
 
 #import "FundsDetailListViewController.h"
+#import "FundsDetailTableViewCell.h"
 
-@interface FundsDetailListViewController ()
+@interface FundsDetailListViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, assign) NSInteger pageCurrent;
@@ -20,6 +21,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setupUI];
     waitingView
     self.pageCurrent = 1;
     [self getFundsDetailData];
@@ -62,6 +64,42 @@
         [self.tableView.mj_header endRefreshing];
         [self.tableView.mj_footer endRefreshing];
     }];
+}
+
+#pragma mark - 布局子视图
+- (void)setupUI
+{
+    [self.view addSubview:self.tableView];
+}
+
+#pragma mark - Getting
+- (UITableView *)tableView
+{
+    if (_tableView == nil) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, MScreenWidth, MScreenHeight - MStatusBarH - MNavBarH)];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableView.backgroundColor = MBackgroundColor;
+        _tableView.estimatedRowHeight = UITableViewAutomaticDimension;
+        _tableView.tableFooterView = [UIView new];
+    }
+    return _tableView;
+}
+
+
+#pragma mark - UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 10;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    FundsDetailTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"FundsDetailTableViewCell"];
+    if (cell == nil) {
+        cell = [[UINib nibWithNibName:@"FundsDetailTableViewCell" bundle:nil] instantiateWithOwner:self options:nil].firstObject;
+    }
+    return cell;
 }
 
 

@@ -10,7 +10,10 @@
 #import "AuthViewController.h"
 #import "ShowViewController.h"
 #import "BankCardViewController.h"
+#import "SettingViewController.h"
 #import "MineHeaderView.h"
+#import "CourseDetailViewController.h"
+#import "AddPublishPeriodViewController.h"
 
 @interface MineViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -191,6 +194,16 @@
         {
             BankCardViewController * bankCardVC = [[BankCardViewController alloc] init];
             [self.navigationController pushViewController:bankCardVC animated:YES];
+        }
+    }else if (indexPath.section == 1)
+    {
+        if (indexPath.row == 0) {
+            AddPublishPeriodViewController * showVC = [[AddPublishPeriodViewController alloc] init];
+            [self.navigationController pushViewController:showVC animated:YES];
+        }else if (indexPath.row == 1)
+        {
+            SettingViewController * settingVC = [[SettingViewController alloc] init];
+            [self.navigationController pushViewController:settingVC animated:YES];
         }
     }
 }
