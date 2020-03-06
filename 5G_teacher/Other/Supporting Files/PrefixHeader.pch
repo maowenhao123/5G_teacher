@@ -101,6 +101,8 @@
 //token
 #define Token [[NSUserDefaults standardUserDefaults] stringForKey:@"token"]
 
+#define MBarItemAttDic @{NSForegroundColorAttributeName: MDefaultColor}
+
 #define waitingView [MBProgressHUD showMessage:@"加载中..." toView:self.view];
 
 #define MPageSize @(10)

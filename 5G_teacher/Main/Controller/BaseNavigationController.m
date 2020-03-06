@@ -22,7 +22,6 @@
 + (void)initialize
 {
     [self setupNavigationBarTheme];
-//    [self setupBarButtonItemTheme];
 }
 
 + (void)setupNavigationBarTheme
@@ -36,18 +35,7 @@
     // 设置标题属性
     NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
     textAttrs[NSForegroundColorAttributeName] = MBlackTextColor;
-    textAttrs[NSFontAttributeName] = [UIFont systemFontOfSize:17];
     [navigationBar setTitleTextAttributes:textAttrs];
-}
-
-+ (void)setupBarButtonItemTheme
-{
-    UIBarButtonItem *barButtonItem = [UIBarButtonItem appearance];
-
-    NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
-    textAttrs[NSForegroundColorAttributeName] = MBlackTextColor;
-    textAttrs[NSFontAttributeName] = [UIFont systemFontOfSize:15];
-    [barButtonItem setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
 }
 
 - (void)viewDidLoad

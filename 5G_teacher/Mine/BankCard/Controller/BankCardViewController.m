@@ -64,6 +64,7 @@
 - (void)setupUI
 {
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"换卡" style:UIBarButtonItemStyleDone target:self action:@selector(addButtonDidClick)];
+    [self.navigationItem.rightBarButtonItem setTitleTextAttributes:MBarItemAttDic forState:UIControlStateNormal];
     
     [self.view addSubview:self.noDataView];
     [self.view addSubview:self.tableView];

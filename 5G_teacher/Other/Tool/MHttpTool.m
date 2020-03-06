@@ -50,7 +50,7 @@
         HUD.label.text = @"图片上传中....";
     }else
     {
-        HUD.label.text = [NSString stringWithFormat:@"%ld/%ld图片上传中....", currentIndex, totalCount];
+        HUD.label.text = [NSString stringWithFormat:@"%ld/%ld图片上传中....", currentIndex + 1, totalCount];
     }
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -94,11 +94,16 @@
 }
 
 //视频上传
-- (void)upFileWithVideo:(NSURL *)videoURL Success:(void (^)(id json))success Failure:(void (^)(NSError * error))failure
+- (void)upFileWithVideo:(NSURL *)videoURL currentIndex:(NSInteger)currentIndex totalCount:(NSInteger)totalCount Success:(void (^)(id json))success Failure:(void (^)(NSError * error))failure
 {
     MBProgressHUD *HUD = [MBProgressHUD showHUDAddedTo:KEY_WINDOW animated:YES];
     HUD.mode = MBProgressHUDModeAnnularDeterminate;//圆环作为进度条
-    HUD.label.text = @"视频上传中....";
+    if (currentIndex == -1) {
+        HUD.label.text = @"视频上传中....";
+    }else
+    {
+        HUD.label.text = [NSString stringWithFormat:@"%ld/%ld视频上传中....", currentIndex + 1, totalCount];
+    }
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer = [AFHTTPRequestSerializer serializer];

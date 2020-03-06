@@ -30,6 +30,7 @@
 {
     if(self = [super initWithReuseIdentifier:reuseIdentifier])
     {
+        self.backgroundColor = [UIColor whiteColor];
         [self setupChildViews];
     }
     return self;
@@ -37,13 +38,7 @@
 
 - (void)setupChildViews
 {
-    self.contentView.backgroundColor = [UIColor whiteColor];
-    
-    UIView * lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MScreenWidth, 9)];
-    lineView.backgroundColor = MBackgroundColor;
-    [self.contentView addSubview:lineView];
-    
-    UILabel * titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(MMargin, CGRectGetMaxY(lineView.frame), MScreenWidth - 2 * MMargin, 45)];
+    UILabel * titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(MMargin, 0, MScreenWidth - 2 * MMargin, 45)];
     self.titleLabel = titleLabel;
     titleLabel.font = [UIFont boldSystemFontOfSize:16];
     titleLabel.textColor = MBlackTextColor;

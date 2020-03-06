@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - 图片上传
 - (void)uploadWithImage:(UIImage *)image currentIndex:(NSInteger)currentIndex totalCount:(NSInteger)totalCount Success:(void (^)(id json))success Failure:(void (^)(NSError * error))failure;
 #pragma mark - 视频上传
-- (void)upFileWithVideo:(NSURL *)videoURL Success:(void (^)(id json))success Failure:(void (^)(NSError * error))failure;
+- (void)upFileWithVideo:(NSURL *)videoURL currentIndex:(NSInteger)currentIndex totalCount:(NSInteger)totalCount Success:(void (^)(id json))success Failure:(void (^)(NSError * error))failure;
 
 @end
 

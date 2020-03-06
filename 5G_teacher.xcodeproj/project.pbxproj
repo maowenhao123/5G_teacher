@@ -16,6 +16,7 @@
 		1D0969D52410C8A00043A0D7 /* CouresPeriodTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0969D22410C8A00043A0D7 /* CouresPeriodTableViewCell.m */; };
 		1D0969D62410C8A00043A0D7 /* CouresPeriodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D0969D42410C8A00043A0D7 /* CouresPeriodTableViewCell.xib */; };
 		1D0969DD2410CA230043A0D7 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0969DC2410CA230043A0D7 /* SettingViewController.m */; };
+		1D0969E32411F4860043A0D7 /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0969E22411F4860043A0D7 /* ForgetPasswordViewController.m */; };
 		1D37347023C57EC60063E036 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D37346F23C57EC60063E036 /* Assets.xcassets */; };
 		1D37347623C57EC60063E036 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D37347523C57EC60063E036 /* main.m */; };
 		1D3734AC23C580BD0063E036 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3734AB23C580BD0063E036 /* MainTabBarController.m */; };
@@ -315,6 +316,8 @@
 		1D0969D42410C8A00043A0D7 /* CouresPeriodTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CouresPeriodTableViewCell.xib; sourceTree = "<group>"; };
 		1D0969DB2410CA230043A0D7 /* SettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		1D0969DC2410CA230043A0D7 /* SettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		1D0969E12411F4860043A0D7 /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordViewController.h; sourceTree = "<group>"; };
+		1D0969E22411F4860043A0D7 /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordViewController.m; sourceTree = "<group>"; };
 		1D37346023C57EC00063E036 /* 5G_teacher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 5G_teacher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D37346F23C57EC60063E036 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D37347423C57EC60063E036 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1041,6 +1044,8 @@
 				1D3734FB23C585640063E036 /* LoginViewController.m */,
 				AA6C732123F2D12E00C79056 /* RegisterViewController.h */,
 				AA6C732223F2D12E00C79056 /* RegisterViewController.m */,
+				1D0969E12411F4860043A0D7 /* ForgetPasswordViewController.h */,
+				1D0969E22411F4860043A0D7 /* ForgetPasswordViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1458,11 +1463,11 @@
 		AA5606A923E9481800F68017 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1D0969C02410B30B0043A0D7 /* CourseHeaderFooterView.h */,
+				1D0969C82410B30C0043A0D7 /* CourseHeaderFooterView.m */,
 				AA6C72E223EABEFC00C79056 /* CourseTableViewCell.h */,
 				AA6C72E323EABEFC00C79056 /* CourseTableViewCell.m */,
 				AA6C72E423EABEFC00C79056 /* CourseTableViewCell.xib */,
-				1D0969C02410B30B0043A0D7 /* CourseHeaderFooterView.h */,
-				1D0969C82410B30C0043A0D7 /* CourseHeaderFooterView.m */,
 				1D0969C42410B30B0043A0D7 /* CourseInfoTableViewCell.h */,
 				1D0969C12410B30B0043A0D7 /* CourseInfoTableViewCell.m */,
 				1D0969C52410B30C0043A0D7 /* CourseInfoTableViewCell.xib */,
@@ -2447,6 +2452,7 @@
 				AA6C737823F2F20800C79056 /* AFSecurityPolicy.m in Sources */,
 				1D3736C723C588510063E036 /* NSImage+Compatibility.m in Sources */,
 				1D3736C823C588510063E036 /* SDAnimatedImageView+WebCache.m in Sources */,
+				1D0969E32411F4860043A0D7 /* ForgetPasswordViewController.m in Sources */,
 				AA63CD4723F42689000BACED /* UIImageView+HXExtension.m in Sources */,
 				AA63CDCE23F50F4B000BACED /* MJRefreshAutoGifFooter.m in Sources */,
 				AABACC7A23F912F200B96B84 /* PGDatePicker+MonthDayHourMinuteSecond.m in Sources */,

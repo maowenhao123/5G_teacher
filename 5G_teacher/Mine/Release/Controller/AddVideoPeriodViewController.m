@@ -140,7 +140,7 @@
 
 - (void)upLoadVideoWithPath:(NSURL *)path
 {
-    [[MHttpTool shareInstance] upFileWithVideo:path Success:^(id  _Nonnull json) {
+    [[MHttpTool shareInstance] upFileWithVideo:path currentIndex:-1 totalCount:1 Success:^(id  _Nonnull json) {
         if (SUCCESS) {
             [MBProgressHUD showSuccess:@"视频上传成功"];
             self.videoNo = json[@"data"];

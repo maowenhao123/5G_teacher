@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "ForgetPasswordViewController.h"
 #import "RegisterViewController.h"
 #import "MValidateTool.h"
 #import "MUserDefaultTool.h"
@@ -151,11 +152,10 @@
 - (void)buttonDidClick:(UIButton *)button
 {
     if (button.tag == 0) {//忘记密码?
-        
+        [self.navigationController pushViewController:[[ForgetPasswordViewController alloc] init] animated:YES];
     }else//新用户注册
     {
-        RegisterViewController * registerVC = [[RegisterViewController alloc] init];
-        [self.navigationController pushViewController:registerVC animated:YES];
+        [self.navigationController pushViewController:[[RegisterViewController alloc] init] animated:YES];
     }
 }
 

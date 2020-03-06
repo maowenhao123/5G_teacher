@@ -203,18 +203,14 @@
         return headerView;
     }else
     {
-        CGFloat headerViewH = 9;
-        if (section == 0) {
-            headerViewH = 0.01;
-        }
-        UIView * headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MScreenWidth, headerViewH)];
+        UIView * headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MScreenWidth, 0.01)];
         return headerView;
     }
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
-    UIView * footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MScreenWidth, 0.01)];
+    UIView * footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MScreenWidth, 9)];
     return footerView;
 }
 
@@ -231,12 +227,12 @@
     if (section == 0) {
         return 0.01;
     }
-    return 9 + 45;
+    return 45;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    return 0.01;
+    return 9;
 }
 
 

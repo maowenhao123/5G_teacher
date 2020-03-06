@@ -46,7 +46,7 @@
     CGFloat avatarImageViewWH = 60;
     UIImageView * avatarImageView = [[UIImageView alloc] initWithFrame:CGRectMake(15, MStatusBarH + (100 - avatarImageViewWH) * 0.4, avatarImageViewWH, avatarImageViewWH)];
     self.avatarImageView = avatarImageView;
-    avatarImageView.image = [UIImage imageNamed:@"tabber_groupon_selected"];
+    avatarImageView.image = [UIImage imageNamed:@"avatar_placeholder"];
     avatarImageView.contentMode = UIViewContentModeScaleAspectFill;
     avatarImageView.layer.masksToBounds = YES;
     avatarImageView.layer.cornerRadius = avatarImageView.width / 2;

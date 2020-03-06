@@ -8,6 +8,7 @@
 
 #import "CourseListViewController.h"
 #import "CourseDetailViewController.h"
+#import "CourseHeaderFooterView.h"
 #import "CourseTableViewCell.h"
 
 @interface CourseListViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -24,9 +25,9 @@
 {
     [super viewDidLoad];
     [self setupUI];
-    waitingView
-    self.pageCurrent = 1;
-    [self getCourseData];
+//    waitingView
+//    self.pageCurrent = 1;
+//    [self getCourseData];
 }
 
 #pragma mark - 请求数据
@@ -34,8 +35,8 @@
 {
     NSDictionary *parameters = @{
         @"date ": self.date,
-//        @"pageCurrent": @(self.pageCurrent),
-//        @"pageSize": MPageSize
+        @"pageCurrent": @(self.pageCurrent),
+        @"pageSize": MPageSize
     };
     [[MHttpTool shareInstance] postWithParameters:parameters url:@"/course/auth/course/lecturer/period/list" success:^(id json) {
         [MBProgressHUD hideHUDForView:self.view];
@@ -77,7 +78,7 @@
 - (UITableView *)tableView
 {
     if (_tableView == nil) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, MScreenWidth, MScreenHeight - MStatusBarH - MNavBarH - 44)];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, MScreenWidth, MScreenHeight - MStatusBarH - MNavBarH - 44 - MTabBarH)];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.backgroundColor = MBackgroundColor;
@@ -105,9 +106,15 @@
 }
 
 #pragma mark - UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 3;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.courseArray.count;
+    return 5;
+//    return self.courseArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -116,8 +123,24 @@
     if (cell == nil) {
         cell = [[UINib nibWithNibName:@"CourseTableViewCell" bundle:nil] instantiateWithOwner:self options:nil].firstObject;
     }
-    cell.courseModel = self.courseArray[indexPath.row];
+//    cell.courseModel = self.courseArray[indexPath.row];
     return cell;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    CourseHeaderFooterView * headerView = [CourseHeaderFooterView headerViewWithTableView:tableView];
+    headerView.backgroundColor = MBackgroundColor;
+    if (section == 0) {
+        headerView.titleLabel.text = @"正在上课";
+    }else if (section == 1)
+    {
+        headerView.titleLabel.text = @"即将开课";
+    }else if (section == 2)
+    {
+        headerView.titleLabel.text = @"已完课";
+    }
+    return headerView;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -125,15 +148,20 @@
     return 100;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    CourseDetailViewController * courseDetailVC = [[CourseDetailViewController alloc] init];
-    CourseModel *courseModel = self.courseArray[indexPath.row];
-    courseDetailVC.courseId = courseModel.id;
-    [self.navigationController pushViewController:courseDetailVC animated:YES];
+    return 45;
 }
+
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//
+//    CourseDetailViewController * courseDetailVC = [[CourseDetailViewController alloc] init];
+//    CourseModel *courseModel = self.courseArray[indexPath.row];
+//    courseDetailVC.courseId = courseModel.id;
+//    [self.navigationController pushViewController:courseDetailVC animated:YES];
+//}
 
 
 
