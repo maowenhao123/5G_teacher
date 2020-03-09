@@ -100,7 +100,7 @@
     UILabel *typeLabel = [self getTitleLabelWithText:@"课程专业"];
     [typeView addSubview:typeLabel];
     
-    UITextField * typeTF = [self getTextFieldWithPlaceholder:@"请输入"];
+    UITextField * typeTF = [self getTextFieldWithPlaceholder:@"请选择"];
     self.typeTF = typeTF;
     typeTF.delegate = self;
     [typeView addSubview:typeTF];
@@ -167,7 +167,7 @@
     priceView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:priceView];
     
-    UILabel *priceLabel = [self getTitleLabelWithText:@"课程价格"];
+    UILabel *priceLabel = [self getTitleLabelWithText:@"价格"];
     [priceView addSubview:priceLabel];
     
     UITextField * priceTF = [self getTextFieldWithPlaceholder:@"请输入"];

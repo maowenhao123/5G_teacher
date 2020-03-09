@@ -35,30 +35,36 @@
         UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hide)];
         [self addGestureRecognizer:tap];
         
-        UIView *contentView = [[UIView alloc]initWithFrame:CGRectMake(0, MScreenHeight, MScreenWidth, 255)];
+        UIView *contentView = [[UIView alloc]initWithFrame:CGRectMake(0, MScreenHeight, MScreenWidth, 300)];
         self.contentView = contentView;
         contentView.backgroundColor = [UIColor whiteColor];
         [self addSubview:contentView];
         
         //工具栏取消和选择
+        UIView * toolView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MScreenWidth, 45)];
+        toolView.backgroundColor = MBackgroundColor;
+        [contentView addSubview:toolView];
+        
         UIButton * cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        cancelButton.frame = CGRectMake(10, 0, 40, 39);
+        cancelButton.frame = CGRectMake(MMargin, 0, 100, toolView.height);
         [cancelButton setTitle:@"取消" forState:UIControlStateNormal];
-        [cancelButton setTitleColor:MBlackTextColor forState:UIControlStateNormal];
-        cancelButton.titleLabel.font = [UIFont systemFontOfSize:16];
+        [cancelButton setTitleColor:MGrayTextColor forState:UIControlStateNormal];
+        cancelButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+        cancelButton.titleLabel.font = [UIFont systemFontOfSize:17];
         [cancelButton addTarget:self action:@selector(hide) forControlEvents:UIControlEventTouchUpInside];
-        [contentView addSubview:cancelButton];
+        [toolView addSubview:cancelButton];
         
         UIButton * selectButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        selectButton.frame = CGRectMake(MScreenWidth - 50, 0, 40, 39);
-        [selectButton setTitle:@"选择" forState:UIControlStateNormal];
-        [selectButton setTitleColor:MBlackTextColor forState:UIControlStateNormal];
-        selectButton.titleLabel.font = [UIFont systemFontOfSize:16];
+        selectButton.frame = CGRectMake(MScreenWidth - 100 - MMargin, 0, 100, toolView.height);
+        [selectButton setTitle:@"确定" forState:UIControlStateNormal];
+        [selectButton setTitleColor:MDefaultColor forState:UIControlStateNormal];
+        selectButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+        selectButton.titleLabel.font = [UIFont systemFontOfSize:17];
         [selectButton addTarget:self action:@selector(selectBarClicked) forControlEvents:UIControlEventTouchUpInside];
-        [contentView addSubview:selectButton];
+        [toolView addSubview:selectButton];
         
         //PickerView
-        UIPickerView * pickView = [[UIPickerView alloc]initWithFrame:CGRectMake(0, 39, MScreenWidth, 216)];
+        UIPickerView * pickView = [[UIPickerView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(toolView.frame), MScreenWidth, contentView.height - CGRectGetMaxY(toolView.frame))];
         self.pickView = pickView;
         pickView.backgroundColor = [UIColor whiteColor];
         pickView.delegate = self;
@@ -152,6 +158,11 @@
         return self.categoryArray1[row];
     }
     return self.categoryArray2[row];
+}
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
+{
+    return 36;
 }
 
 #pragma mark - UIPickerViewDelegate

@@ -13,8 +13,6 @@
 		1D0969CB2410B30C0043A0D7 /* CourseInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0969C12410B30B0043A0D7 /* CourseInfoTableViewCell.m */; };
 		1D0969CD2410B30C0043A0D7 /* CourseInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D0969C52410B30C0043A0D7 /* CourseInfoTableViewCell.xib */; };
 		1D0969D02410B30C0043A0D7 /* CourseHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0969C82410B30C0043A0D7 /* CourseHeaderFooterView.m */; };
-		1D0969D52410C8A00043A0D7 /* CouresPeriodTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0969D22410C8A00043A0D7 /* CouresPeriodTableViewCell.m */; };
-		1D0969D62410C8A00043A0D7 /* CouresPeriodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D0969D42410C8A00043A0D7 /* CouresPeriodTableViewCell.xib */; };
 		1D0969DD2410CA230043A0D7 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0969DC2410CA230043A0D7 /* SettingViewController.m */; };
 		1D0969E32411F4860043A0D7 /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0969E22411F4860043A0D7 /* ForgetPasswordViewController.m */; };
 		1D37347023C57EC60063E036 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D37346F23C57EC60063E036 /* Assets.xcassets */; };
@@ -95,6 +93,8 @@
 		1D37370723C588520063E036 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3736C423C588510063E036 /* UIColor+HexString.m */; };
 		1D37370823C588520063E036 /* SDAssociatedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3736C523C588510063E036 /* SDAssociatedObject.m */; };
 		1D37371023C854F50063E036 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D37370F23C854F50063E036 /* MessageViewController.m */; };
+		1D6AFA2B241642E800146230 /* CouresPeriodTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6AFA2A241642E800146230 /* CouresPeriodTableViewCell.m */; };
+		1D6AFA2D241642F400146230 /* CouresPeriodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D6AFA2C241642F400146230 /* CouresPeriodTableViewCell.xib */; };
 		AA56068B23E942DC00F68017 /* UIImage+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = AA56068A23E942DC00F68017 /* UIImage+Category.m */; };
 		AA5606A023E9475300F68017 /* UIButton+SGPagingView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA56069023E9475300F68017 /* UIButton+SGPagingView.m */; };
 		AA5606A123E9475300F68017 /* UIView+SGPagingView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA56069123E9475300F68017 /* UIView+SGPagingView.m */; };
@@ -311,9 +311,6 @@
 		1D0969C42410B30B0043A0D7 /* CourseInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseInfoTableViewCell.h; sourceTree = "<group>"; };
 		1D0969C52410B30C0043A0D7 /* CourseInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CourseInfoTableViewCell.xib; sourceTree = "<group>"; };
 		1D0969C82410B30C0043A0D7 /* CourseHeaderFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseHeaderFooterView.m; sourceTree = "<group>"; };
-		1D0969D22410C8A00043A0D7 /* CouresPeriodTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouresPeriodTableViewCell.m; sourceTree = "<group>"; };
-		1D0969D32410C8A00043A0D7 /* CouresPeriodTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouresPeriodTableViewCell.h; sourceTree = "<group>"; };
-		1D0969D42410C8A00043A0D7 /* CouresPeriodTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CouresPeriodTableViewCell.xib; sourceTree = "<group>"; };
 		1D0969DB2410CA230043A0D7 /* SettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		1D0969DC2410CA230043A0D7 /* SettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		1D0969E12411F4860043A0D7 /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordViewController.h; sourceTree = "<group>"; };
@@ -481,6 +478,9 @@
 		1D3736C523C588510063E036 /* SDAssociatedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDAssociatedObject.m; sourceTree = "<group>"; };
 		1D37370E23C854F50063E036 /* MessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		1D37370F23C854F50063E036 /* MessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		1D6AFA29241642D100146230 /* CouresPeriodTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouresPeriodTableViewCell.h; sourceTree = "<group>"; };
+		1D6AFA2A241642E800146230 /* CouresPeriodTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouresPeriodTableViewCell.m; sourceTree = "<group>"; };
+		1D6AFA2C241642F400146230 /* CouresPeriodTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CouresPeriodTableViewCell.xib; sourceTree = "<group>"; };
 		AA56068923E942DC00F68017 /* UIImage+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Category.h"; sourceTree = "<group>"; };
 		AA56068A23E942DC00F68017 /* UIImage+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Category.m"; sourceTree = "<group>"; };
 		AA56068E23E9475300F68017 /* UIButton+SGPagingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+SGPagingView.h"; sourceTree = "<group>"; };
@@ -1471,9 +1471,9 @@
 				1D0969C42410B30B0043A0D7 /* CourseInfoTableViewCell.h */,
 				1D0969C12410B30B0043A0D7 /* CourseInfoTableViewCell.m */,
 				1D0969C52410B30C0043A0D7 /* CourseInfoTableViewCell.xib */,
-				1D0969D32410C8A00043A0D7 /* CouresPeriodTableViewCell.h */,
-				1D0969D22410C8A00043A0D7 /* CouresPeriodTableViewCell.m */,
-				1D0969D42410C8A00043A0D7 /* CouresPeriodTableViewCell.xib */,
+				1D6AFA29241642D100146230 /* CouresPeriodTableViewCell.h */,
+				1D6AFA2A241642E800146230 /* CouresPeriodTableViewCell.m */,
+				1D6AFA2C241642F400146230 /* CouresPeriodTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2357,8 +2357,8 @@
 				AA63CDC623F50F4B000BACED /* MJRefresh.bundle in Resources */,
 				1D0969CD2410B30C0043A0D7 /* CourseInfoTableViewCell.xib in Resources */,
 				AA63CD6C23F42689000BACED /* HXPhotoPicker.bundle in Resources */,
-				1D0969D62410C8A00043A0D7 /* CouresPeriodTableViewCell.xib in Resources */,
 				AABACC8223F912F200B96B84 /* PGDatePicker.bundle in Resources */,
+				1D6AFA2D241642F400146230 /* CouresPeriodTableViewCell.xib in Resources */,
 				1D37347023C57EC60063E036 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2436,6 +2436,7 @@
 				AA63CD5223F42689000BACED /* HXPhotoModel.m in Sources */,
 				AA63CDC823F50F4B000BACED /* NSBundle+MJRefresh.m in Sources */,
 				1D3736F023C588510063E036 /* UIImageView+WebCache.m in Sources */,
+				1D6AFA2B241642E800146230 /* CouresPeriodTableViewCell.m in Sources */,
 				1D3736D023C588510063E036 /* UIImage+ForceDecode.m in Sources */,
 				AABACC8623F912F200B96B84 /* PGDatePicker+MonthDay.m in Sources */,
 				AA6C737723F2F20800C79056 /* AFNetworkReachabilityManager.m in Sources */,
@@ -2552,7 +2553,6 @@
 				AA63CD5D23F42689000BACED /* HXPhotoViewFlowLayout.m in Sources */,
 				AA63CDDC23F50F4B000BACED /* MJExtensionConst.m in Sources */,
 				AA63CD7123F42689000BACED /* HXVideoEditViewController.m in Sources */,
-				1D0969D52410C8A00043A0D7 /* CouresPeriodTableViewCell.m in Sources */,
 				1D3736DA23C588510063E036 /* SDMemoryCache.m in Sources */,
 				AA63CD6E23F42689000BACED /* HXPhotoEditViewController.m in Sources */,
 				AABACC7223F912F200B96B84 /* PGDatePicker+MonthDayHour.m in Sources */,

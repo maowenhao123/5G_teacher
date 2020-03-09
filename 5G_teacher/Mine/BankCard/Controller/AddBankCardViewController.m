@@ -99,7 +99,11 @@
     
     //提交
     UIButton * submitButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    submitButton.frame = CGRectMake(15, MScreenHeight - MStatusBarH - MNavBarH - 40 - MSafeBottomMargin - MMargin, MScreenWidth - 2 * 15, 40);
+    CGFloat submitButtonY = MScreenHeight - MStatusBarH - MNavBarH - MMargin;
+    if (IsBangIPhone) {
+        submitButtonY = MScreenHeight - MStatusBarH - MNavBarH - MSafeBottomMargin - 40;
+    }
+    submitButton.frame = CGRectMake(15, submitButtonY, MScreenWidth - 2 * 15, 40);
     submitButton.backgroundColor = MDefaultColor;
     [submitButton setTitle:@"提交" forState:UIControlStateNormal];
     [submitButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];

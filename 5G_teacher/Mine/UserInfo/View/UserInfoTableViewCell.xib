@@ -27,6 +27,7 @@
                     </label>
                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FPy-eo-iKo">
                         <rect key="frame" x="100" y="10" width="205" height="30"/>
+                        <color key="tintColor" red="0.92941176470588238" green="0.43529411764705883" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="xVu-6P-kl1"/>
                         </constraints>

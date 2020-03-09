@@ -27,6 +27,7 @@
     self.title = @"提现";
     [self setupUI];
     [self getBankCardData];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getBankCardData) name:@"updateBankCard" object:nil];
 }
 
 #pragma mark - 请求数据
@@ -85,6 +86,18 @@
     self.bankCardTF = bankCardTF;
     bankCardTF.userInteractionEnabled = NO;
     [bankCardView addSubview:bankCardTF];
+    
+    //确定
+    UIButton * confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    confirmButton.frame = CGRectMake(15, CGRectGetMaxY(bankCardView.frame) + 40, MScreenWidth - 2 * 15, 40);
+    confirmButton.backgroundColor = MDefaultColor;
+    [confirmButton setTitle:@"确定" forState:UIControlStateNormal];
+    [confirmButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    confirmButton.titleLabel.font = [UIFont systemFontOfSize:16];
+    confirmButton.layer.cornerRadius = confirmButton.height / 2;
+    confirmButton.layer.masksToBounds = YES;
+    [confirmButton addTarget:self action:@selector(confirmButtonDidClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:confirmButton];
 }
 
 - (UILabel *)getTitleLabelWithText:(NSString *)text
@@ -112,6 +125,13 @@
 {
     BankCardViewController * bankCardVC = [[BankCardViewController alloc] init];
     [self.navigationController pushViewController:bankCardVC animated:YES];
+}
+
+#pragma mark - 提款
+- (void)confirmButtonDidClick
+{
+    [self.view endEditing:YES];
+    
 }
 
 @end

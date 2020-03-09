@@ -200,6 +200,7 @@
         [MBProgressHUD hideHUDForView:self.view];
         if (SUCCESS) {
             [MBProgressHUD showSuccess:@"提交成功"];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"updateUserInfo" object:nil];
             [self.navigationController popViewControllerAnimated:YES];
         }else
         {
