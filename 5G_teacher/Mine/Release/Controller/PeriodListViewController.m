@@ -36,14 +36,14 @@
     }
     [self setupUI];
     [self getClassData];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getClassData) name:@"updatePeriodList" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getClassData) name:@"UpdatePeriodList" object:nil];
 }
 
 #pragma mark - 请求数据
 - (void)getClassData
 {
     NSDictionary *parameters = @{
-        @"courseId": self.courseId
+        @"courseId": @(self.courseId)
     };
     waitingView
     [[MHttpTool shareInstance] postWithParameters:parameters url:@"/course/auth/course/chapter/period/audit/list" success:^(id json) {
@@ -206,7 +206,7 @@
         [alertController addAction:alertAction1];
         UIAlertAction * alertAction2 = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             NSDictionary *parameters = @{
-                @"id": periodModel.id
+                @"id": @(periodModel.id)
             };
             waitingView
             [[MHttpTool shareInstance] postWithParameters:parameters url:@"/course/auth/course/chapter/period/audit/delete" success:^(id json) {

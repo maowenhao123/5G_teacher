@@ -46,7 +46,7 @@
         self.title = @"一对一";
     }
     [self setupUI];
-    if (!MStringIsEmpty(self.courseId)) {
+    if (self.courseId > 0) {
         [self getCourseData];
     }
 }
@@ -55,7 +55,7 @@
 - (void)getCourseData
 {
     NSDictionary *parameters = @{
-        @"id": self.courseId
+        @"id": @(self.courseId)
     };
     waitingView
     [[MHttpTool shareInstance] postWithParameters:parameters url:@"/course/auth/course/audit/view" success:^(id json) {
@@ -309,15 +309,7 @@
 - (void)nextButtonDidClick:(UIButton *)button
 {
     [self.view endEditing:YES];
-    
-//    //1230016747263684610
-//    //1229965384022421505
-//    PeriodListViewController * classListVC = [[PeriodListViewController alloc] init];
-//    classListVC.courseId = @"1230016747263684610";
-//    classListVC.courseType = self.courseType;
-//    [self.navigationController pushViewController:classListVC animated:YES];
-//    return;
-    
+
     if (MStringIsEmpty(self.titleTF.text)) {
         [MBProgressHUD showError:@"请输入课程标题"];
         return;
@@ -370,17 +362,17 @@
     };
     NSMutableDictionary *parameters_mu = [NSMutableDictionary dictionaryWithDictionary:parameters];
     NSString * url = @"/course/auth/course/audit/save";
-    if (!MStringIsEmpty(self.courseId)) {
-        [parameters_mu setValue:self.courseId forKey:@"id"];
+    if (self.courseId > 0) {
+        [parameters_mu setValue:@(self.courseId) forKey:@"id"];
         url = @"/course/auth/course/audit/update";
     }
     waitingView
-    [[MHttpTool shareInstance] postWithParameters:parameters url:url success:^(id json) {
+    [[MHttpTool shareInstance] postWithParameters:parameters_mu url:url success:^(id json) {
         [MBProgressHUD hideHUDForView:self.view];
         if (SUCCESS) {
             [MBProgressHUD showSuccess:@"发布成功"];
             PeriodListViewController * classListVC = [[PeriodListViewController alloc] init];
-            classListVC.courseId = json[@"data"][@"id"];//1228675557448658946
+            classListVC.courseId = self.courseId;
             classListVC.courseType = self.courseType;
             [self.navigationController pushViewController:classListVC animated:YES];
         }else

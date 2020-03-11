@@ -9,6 +9,7 @@
 #import "CourseTableViewCell.h"
 
 @interface CourseTableViewCell ()
+
 @property (weak, nonatomic) IBOutlet UIImageView *courseImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;

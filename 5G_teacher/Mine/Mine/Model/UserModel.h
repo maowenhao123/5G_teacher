@@ -10,6 +10,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@interface AccountModel : NSObject
+
+@property (nonatomic, assign) NSInteger balance;
+@property (nonatomic, assign) NSInteger enableBalance;
+@property (nonatomic, assign) NSInteger freezeBalance;
+@property (nonatomic, assign) NSInteger totalIncome;
+
+@end
+
 @interface UserExtModel : NSObject
 
 @property (nonatomic, copy) NSString * bankBranchName;
@@ -29,7 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString * sign;
 @property (nonatomic, assign) NSInteger sort;
 @property (nonatomic, assign) NSInteger statusId;
-@property (nonatomic, assign) NSInteger totalIncome;
+@property (nonatomic, strong) AccountModel * account;
 
 @end
 
@@ -55,7 +64,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger statusId;
 @property (nonatomic, copy) NSString * teacherCertImage;
 @property (nonatomic, assign) NSInteger tearcherAge;
-@property (nonatomic, strong) UserExtModel * userExtModel;
+@property (nonatomic, copy) NSString * pictures;
+@property (nonatomic, copy) NSString * videos;
+@property (nonatomic, strong) UserExtModel * ext;
 
 @end
 

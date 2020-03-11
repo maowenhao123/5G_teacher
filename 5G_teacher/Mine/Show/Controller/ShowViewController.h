@@ -7,10 +7,13 @@
 //
 
 #import "BaseViewController.h"
+#import "UserModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ShowViewController : BaseViewController
+
+@property (strong, nonatomic) UserModel *userModel;
 
 @end
 

@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger id;
 @property (nonatomic, copy) NSString *videoLength;
 @property (nonatomic, copy) NSString *videoName;
-@property (nonatomic, copy) NSString * videoNo;
+@property (nonatomic, assign) NSInteger videoNo;
 @property (nonatomic, assign) NSInteger videoStatus;
 @property (nonatomic, assign) NSInteger videoVid;
 
@@ -35,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger auditStatus;
 @property (nonatomic, copy) NSString *docName;
 @property (nonatomic, copy) NSString *docUrl;
-@property (nonatomic, copy) NSString *id;
+@property (nonatomic, assign) NSInteger id;
 @property (nonatomic, assign) BOOL isDoc;
 @property (nonatomic, assign) BOOL isFree;
 @property (nonatomic, copy) NSString *periodDesc;

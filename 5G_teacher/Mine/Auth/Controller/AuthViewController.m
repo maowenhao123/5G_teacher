@@ -29,6 +29,9 @@
 #pragma mark - 布局子视图
 - (void)setupUI
 {
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"上传" style:UIBarButtonItemStyleDone target:self action:@selector(uploadBarDidClick)];
+    [self.navigationItem.rightBarButtonItem setTitleTextAttributes:MBarItemAttDic forState:UIControlStateNormal];
+    
     CGFloat imageViewH = 90;
     CGFloat imageViewW = (MScreenWidth - 4 * MMargin) / 3;
     for (int i = 0; i < 2; i++) {
@@ -88,24 +91,36 @@
             imageView.userInteractionEnabled = YES;
             [imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(chooseImage:)]];
             [bgLabel addSubview:imageView];
+            if (i == 0) {
+                if (j == 0) {
+                    [imageView sd_setImageWithURL:[NSURL URLWithString:self.userModel.idCardFrontImage] placeholderImage:[UIImage imageNamed:@""]];
+                    [self.imageUrls replaceObjectAtIndex:0 withObject:self.userModel.idCardFrontImage];
+                }else if (j == 1)
+                {
+                    [imageView sd_setImageWithURL:[NSURL URLWithString:self.userModel.idCardBackImage] placeholderImage:[UIImage imageNamed:@""]];
+                    [self.imageUrls replaceObjectAtIndex:1 withObject:self.userModel.idCardBackImage];
+                }else if (j == 2)
+                {
+                    [imageView sd_setImageWithURL:[NSURL URLWithString:self.userModel.idCardHandImage] placeholderImage:[UIImage imageNamed:@""]];
+                    [self.imageUrls replaceObjectAtIndex:2 withObject:self.userModel.idCardHandImage];
+                }
+            }else if (i == 1)
+            {
+                if (j == 0) {
+                    [imageView sd_setImageWithURL:[NSURL URLWithString:self.userModel.graduateCertImage] placeholderImage:[UIImage imageNamed:@""]];
+                    [self.imageUrls replaceObjectAtIndex:3 withObject:self.userModel.graduateCertImage];
+                }else if (j == 1)
+                {
+                    [imageView sd_setImageWithURL:[NSURL URLWithString:self.userModel.teacherCertImage] placeholderImage:[UIImage imageNamed:@""]];
+                    [self.imageUrls replaceObjectAtIndex:4 withObject:self.userModel.teacherCertImage];
+                }else if (j == 2)
+                {
+                    [imageView sd_setImageWithURL:[NSURL URLWithString:self.userModel.specialCertImage] placeholderImage:[UIImage imageNamed:@""]];
+                    [self.imageUrls replaceObjectAtIndex:5 withObject:self.userModel.specialCertImage];
+                }
+            }
         }
     }
-    
-    //提交
-    UIButton * submitButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    CGFloat submitButtonY = MScreenHeight - MStatusBarH - MNavBarH - MMargin;
-    if (IsBangIPhone) {
-        submitButtonY = MScreenHeight - MStatusBarH - MNavBarH - MSafeBottomMargin - 40;
-    }
-    submitButton.frame = CGRectMake(15, submitButtonY, MScreenWidth - 2 * 15, 40);
-    submitButton.backgroundColor = MDefaultColor;
-    [submitButton setTitle:@"提交" forState:UIControlStateNormal];
-    [submitButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    submitButton.titleLabel.font = [UIFont systemFontOfSize:16];
-    submitButton.layer.cornerRadius = submitButton.height / 2;
-    submitButton.layer.masksToBounds = YES;
-    [submitButton addTarget:self action:@selector(submitButtonDidClick:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:submitButton];
 }
 
 #pragma mark - Getting
@@ -159,7 +174,7 @@
 }
 
 #pragma mark - 上传信息
-- (void)submitButtonDidClick:(UIButton *)button
+- (void)uploadBarDidClick
 {
     //判空
     for (int i = 0; i < self.imageUrls.count; i++) {
@@ -196,11 +211,13 @@
         @"specialCertImage": self.imageUrls[5],
     };
     waitingView
+    self.navigationItem.rightBarButtonItem.enabled = NO;
     [[MHttpTool shareInstance] postWithParameters:parameters url:@"/user/auth/lecturer/audit/apply" success:^(id json) {
         [MBProgressHUD hideHUDForView:self.view];
+        self.navigationItem.rightBarButtonItem.enabled = YES;
         if (SUCCESS) {
             [MBProgressHUD showSuccess:@"提交成功"];
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"updateUserInfo" object:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"UpdateUserInfo" object:nil];
             [self.navigationController popViewControllerAnimated:YES];
         }else
         {
@@ -209,6 +226,7 @@
     } failure:^(NSError *error) {
         MLog(@"error:%@",error);
         [MBProgressHUD hideHUDForView:self.view];
+        self.navigationItem.rightBarButtonItem.enabled = YES;
     }];
 }
 

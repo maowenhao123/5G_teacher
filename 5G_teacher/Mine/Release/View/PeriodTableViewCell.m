@@ -160,10 +160,10 @@
 }
 
 #pragma mark - 获取视频URL
-- (void)getVideoUrlWithVideoNo:(NSString *)videoNo
+- (void)getVideoUrlWithVideoNo:(NSInteger)videoNo
 {
     NSDictionary *parameters = @{
-        @"videoNo": videoNo
+        @"periodVideoId": @(videoNo)
     };
     [[MHttpTool shareInstance] postWithParameters:parameters url:@"/course/auth/course/chapter/period/audit/video" success:^(id json) {
         if (SUCCESS) {

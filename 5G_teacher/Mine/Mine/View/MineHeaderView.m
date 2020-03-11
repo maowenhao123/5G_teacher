@@ -73,14 +73,6 @@
     self.moneyLabel = moneyLabel;
     [self addSubview:moneyLabel];
     
-    NSString *moneyText = @"1000";
-    NSMutableAttributedString *moneyAttStr = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"余额 %@ 元", moneyText]];
-    [moneyAttStr addAttribute:NSForegroundColorAttributeName value:MBlackTextColor range:NSMakeRange(0, moneyAttStr.length)];
-    [moneyAttStr addAttribute:NSForegroundColorAttributeName value:MDefaultColor range:[moneyAttStr.string rangeOfString:moneyText]];
-    [moneyAttStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:15] range:NSMakeRange(0, moneyAttStr.length)];
-    [moneyAttStr addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:18] range:[moneyAttStr.string rangeOfString:moneyText]];
-    self.moneyLabel.attributedText = moneyAttStr;
-    
     //按钮
     CGFloat buttonW = 72;
     CGFloat buttonH = 32;
@@ -191,8 +183,15 @@
     {
         self.nickNameLabel.text = _userModel.lecturerMobile;
     }
-    self.infoLabel.text = [NSString stringWithFormat:@"人气%ld 课程%ld", _userModel.userExtModel.fansCount, _userModel.userExtModel.courseCount];
+    self.infoLabel.text = [NSString stringWithFormat:@"人气%ld 课程%ld", _userModel.ext.fansCount, _userModel.ext.courseCount];
     
+    NSString *moneyText = [NSString stringWithFormat:@"%ld", _userModel.ext.account.balance];
+    NSMutableAttributedString *moneyAttStr = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"余额 %@ 元", moneyText]];
+    [moneyAttStr addAttribute:NSForegroundColorAttributeName value:MBlackTextColor range:NSMakeRange(0, moneyAttStr.length)];
+    [moneyAttStr addAttribute:NSForegroundColorAttributeName value:MDefaultColor range:[moneyAttStr.string rangeOfString:moneyText]];
+    [moneyAttStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:15] range:NSMakeRange(0, moneyAttStr.length)];
+    [moneyAttStr addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:18] range:[moneyAttStr.string rangeOfString:moneyText]];
+    self.moneyLabel.attributedText = moneyAttStr;
 }
 
 @end

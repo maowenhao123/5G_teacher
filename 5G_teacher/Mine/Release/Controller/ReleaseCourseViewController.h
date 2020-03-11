@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ReleaseCourseViewController : BaseViewController
 
-@property (nonatomic, copy) NSString *courseId;
+@property (nonatomic, assign) NSInteger courseId;
 @property (nonatomic, assign) CourseType courseType;
 
 @end

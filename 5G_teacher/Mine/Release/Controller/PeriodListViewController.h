@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface PeriodListViewController : BaseViewController
 
 @property (nonatomic, assign) CourseType courseType;
-@property (nonatomic, copy) NSString *courseId;
+@property (nonatomic, assign) NSInteger courseId;
 
 @end
 

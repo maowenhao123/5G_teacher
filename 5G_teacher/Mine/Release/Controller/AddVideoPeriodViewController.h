@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) PeriodModel *periodModel;
 @property (nonatomic, assign) CourseType courseType;
-@property (nonatomic, copy) NSString *courseId;
+@property (nonatomic, assign) NSInteger courseId;
 
 @end
 

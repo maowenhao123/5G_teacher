@@ -102,6 +102,16 @@
         photoManager.configuration.reverseDate = YES;
         photoManager.configuration.requestImageAfterFinishingSelection = YES;
         
+        if (!MStringIsEmpty(self.userModel.pictures)) {
+            NSArray *picturesUrls = [self.userModel.pictures componentsSeparatedByString:@";"];
+            NSMutableArray<HXPhotoModel *> *modelArray = [NSMutableArray array];
+            for (NSString * picturesUrl in picturesUrls) {
+                HXPhotoModel * photoModel = [HXPhotoModel photoModelWithImageURL:[NSURL URLWithString:picturesUrl]];
+                [modelArray addObject:photoModel];
+            }
+            [photoManager addModelArray:modelArray];
+        }
+        
         _picPhotoView = [HXPhotoView photoManager:photoManager scrollDirection:UICollectionViewScrollDirectionVertical];
         CGFloat itemWH = (MScreenWidth - 4 * MMargin) / 3;
         _picPhotoView.frame = CGRectMake(0, MCellH, MScreenWidth, itemWH);
@@ -255,9 +265,10 @@
     waitingView
     [[MHttpTool shareInstance] postWithParameters:parameters url:@"/user/auth/lecturer/audit/apply" success:^(id json) {
         [MBProgressHUD hideHUDForView:self.view];
+        self.navigationItem.rightBarButtonItem.enabled = YES;
         if (SUCCESS) {
             [MBProgressHUD showSuccess:@"提交成功"];
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"updateUserInfo" object:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"UpdateUserInfo" object:nil];
             [self.navigationController popViewControllerAnimated:YES];
         }else
         {
@@ -266,6 +277,7 @@
     } failure:^(NSError *error) {
         MLog(@"error:%@",error);
         [MBProgressHUD hideHUDForView:self.view];
+        self.navigationItem.rightBarButtonItem.enabled = YES;
     }];
 }
 

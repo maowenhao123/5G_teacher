@@ -13,8 +13,9 @@
 
 @property (nonatomic, weak) UITextField * titleTF;
 @property (nonatomic, weak) UIImageView * videoImageView;
+@property (nonatomic, weak) UIImageView * playImageView;
 @property (strong, nonatomic) HXPhotoManager *photoManager;
-@property (nonatomic, copy) NSString *videoNo;
+@property (nonatomic, assign) NSInteger videoNo;
 
 @end
 
@@ -67,15 +68,16 @@
     
     UIImageView * videoImageView = [[UIImageView alloc] initWithFrame:videoBgLabel.bounds];
     self.videoImageView = videoImageView;
-    videoImageView.backgroundColor = MBackgroundColor;
     videoImageView.userInteractionEnabled = YES;
     [videoImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(chooseVideo:)]];
     [videoBgLabel addSubview:videoImageView];
     
     CGFloat playImageViewWH = 25;
     UIImageView * playImageView = [[UIImageView alloc] initWithFrame:CGRectMake((imageViewW - playImageViewWH) / 2, (imageViewH - playImageViewWH) / 2, playImageViewWH, playImageViewWH)];
+    self.playImageView = playImageView;
     playImageView.image = [UIImage imageNamed:@"video_play_icon"];
     playImageView.center = videoImageView.center;
+    playImageView.hidden = YES;
     [videoImageView addSubview:playImageView];
     
     //确定
@@ -98,14 +100,18 @@
 }
 
 #pragma mark - 获取视频URL
-- (void)getVideoUrlWithVideoNo:(NSString *)videoNo
+- (void)getVideoUrlWithVideoNo:(NSInteger)videoNo
 {
     NSDictionary *parameters = @{
-        @"videoNo": videoNo
+        @"periodVideoId": @(videoNo)
     };
-    [[MHttpTool shareInstance] postWithParameters:parameters url:@"/course/auth/course/chapter/period/audit/video" success:^(id json) {
+    [[MHttpTool shareInstance] postWithParameters:parameters url:@"/course/auth/course/chapter/period/audit/upload" success:^(id json) {
         if (SUCCESS) {
             self.videoImageView.image = [Tool getVideoPreViewImage:[NSURL URLWithString:json[@"data"]]];
+            self.playImageView.hidden = NO;
+        }else
+        {
+            ShowErrorView
         }
     } failure:^(NSError *error) {
         MLog(@"error:%@",error);
@@ -143,7 +149,7 @@
     [[MHttpTool shareInstance] upFileWithVideo:path currentIndex:-1 totalCount:1 Success:^(id  _Nonnull json) {
         if (SUCCESS) {
             [MBProgressHUD showSuccess:@"视频上传成功"];
-            self.videoNo = json[@"data"];
+            self.videoNo = [json[@"data"] integerValue];
         }else
         {
             ShowErrorView
@@ -162,19 +168,19 @@
         [MBProgressHUD showError:@"请输入课时标题"];
         return;
     }
-    if (MStringIsEmpty(self.videoNo)) {
+    if (self.videoNo == 0) {
         [MBProgressHUD showError:@"请选择视频"];
         return;
     }
     NSDictionary *parameters = @{
-        @"courseId": self.courseId,
+        @"courseId": @(self.courseId),
         @"periodName": self.titleTF.text,
-        @"videoNo": self.videoNo
+        @"videoNo": @(self.videoNo)
     };
     NSMutableDictionary *parameters_mu = [NSMutableDictionary dictionaryWithDictionary:parameters];
     NSString * url = @"/course/auth/course/chapter/period/audit/save";
     if (!MObjectIsEmpty(self.periodModel)) {
-        [parameters_mu setObject:self.periodModel.id forKey:@"id"];
+        [parameters_mu setObject:@(self.periodModel.id) forKey:@"id"];
         url = @"/course/auth/course/chapter/period/audit/update";
     }
     waitingView
@@ -187,7 +193,7 @@
             {
                 [MBProgressHUD showSuccess:@"添加成功"];
             }
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"updatePeriodList" object:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"UpdatePeriodList" object:nil];
             [self.navigationController popViewControllerAnimated:YES];
         }else
         {

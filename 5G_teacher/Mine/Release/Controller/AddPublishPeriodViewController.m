@@ -206,7 +206,7 @@
         return;
     }
     NSDictionary *parameters = @{
-        @"courseId": self.courseId,
+        @"courseId": @(self.courseId),
         @"periodName": self.titleTF.text,
         @"date": self.dateTF.text,
         @"startTime": self.startTimeTF.text,
@@ -215,7 +215,7 @@
     NSMutableDictionary *parameters_mu = [NSMutableDictionary dictionaryWithDictionary:parameters];
     NSString * url = @"/course/auth/course/chapter/period/audit/save";
     if (!MObjectIsEmpty(self.periodModel)) {
-        [parameters_mu setObject:self.periodModel.id forKey:@"id"];
+        [parameters_mu setObject:@(self.periodModel.id) forKey:@"id"];
         url = @"/course/auth/course/chapter/period/audit/update";
     }
     waitingView
@@ -228,7 +228,7 @@
             {
                 [MBProgressHUD showSuccess:@"添加成功"];
             }
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"updatePeriodList" object:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"UpdatePeriodList" object:nil];
             [self.navigationController popViewControllerAnimated:YES];
         }else
         {

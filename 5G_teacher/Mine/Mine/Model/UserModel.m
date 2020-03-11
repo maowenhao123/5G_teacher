@@ -8,6 +8,10 @@
 
 #import "UserModel.h"
 
+@implementation AccountModel
+
+@end
+
 @implementation UserExtModel
 
 @end

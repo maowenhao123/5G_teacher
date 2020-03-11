@@ -83,6 +83,7 @@
         _tableView.dataSource = self;
         _tableView.backgroundColor = MBackgroundColor;
         _tableView.tableFooterView = [UIView new];
+        _tableView.estimatedRowHeight = 80;
         
         __weak typeof(self) wself = self;
         _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
@@ -145,7 +146,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 100;
+    return UITableViewAutomaticDimension;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section

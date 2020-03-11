@@ -27,14 +27,14 @@
     [super viewDidLoad];
     [self setupUI];
     self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-//    [self getCourseData];
+    [self getCourseData];
 }
 
 #pragma mark - 请求数据
 - (void)getCourseData
 {
     NSDictionary *parameters = @{
-        @"id": self.courseId
+        @"id": @(self.courseId)
     };
     waitingView
     [[MHttpTool shareInstance] postWithParameters:parameters url:@"/course/auth/course/audit/view" success:^(id json) {
@@ -123,7 +123,7 @@
         [alertController addAction:alertAction1];
         UIAlertAction * alertAction2 = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             NSDictionary *parameters = @{
-                @"id": self.courseId
+                @"id": @(self.courseId)
             };
             waitingView
             [[MHttpTool shareInstance] postWithParameters:parameters url:@"/course/auth/course/audit/delete" success:^(id json) {
@@ -157,6 +157,7 @@
         _tableView.dataSource = self;
         _tableView.backgroundColor = MBackgroundColor;
         _tableView.tableFooterView = [UIView new];
+        _tableView.estimatedRowHeight = 80;
     }
     return _tableView;
 }

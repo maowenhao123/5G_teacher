@@ -31,8 +31,13 @@
     [self setupUI];
     self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     [self getUserData];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getUserData) name:@"loginSuccess" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getUserData) name:@"updateUserInfo" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getUserData) name:@"LoginSuccess" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getUserData) name:@"UpdateUserInfo" object:nil];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 #pragma mark - 请求数据
@@ -185,10 +190,12 @@
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
             ShowViewController * showVC = [[ShowViewController alloc] init];
+            showVC.userModel = self.userModel;
             [self.navigationController pushViewController:showVC animated:YES];
         }else if (indexPath.row == 1)
         {
             AuthViewController * authVC = [[AuthViewController alloc] init];
+            authVC.userModel = self.userModel;
             [self.navigationController pushViewController:authVC animated:YES];
         }else if (indexPath.row == 2)
         {
