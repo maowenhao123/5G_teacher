@@ -9,7 +9,7 @@
 #import "MineHeaderView.h"
 #import "UserInfoViewController.h"
 #import "WithdrawViewController.h"
-#import "FundsDetailViewController.h"
+#import "BalanceDetailViewController.h"
 #import "MyCourseViewController.h"
 #import "ChooseCourseTypeViewController.h"
 
@@ -150,7 +150,7 @@
 - (void)fundsButtonDidClick:(UIButton *)button
 {
     if (button.tag == 0) {
-        [self.viewController.navigationController pushViewController:[FundsDetailViewController new] animated:YES];
+        [self.viewController.navigationController pushViewController:[BalanceDetailViewController new] animated:YES];
     }else if (button.tag == 1)
     {
         [self.viewController.navigationController pushViewController:[WithdrawViewController new] animated:YES];

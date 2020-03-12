@@ -1,5 +1,5 @@
 //
-//  FundsDetailListViewController.h
+//  BalanceDetailViewController.h
 //  5G_teacher
 //
 //  Created by 毛文豪 on 2020/2/19.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FundsDetailListViewController : BaseViewController
+@interface BalanceDetailViewController : BaseViewController
 
 @end
 

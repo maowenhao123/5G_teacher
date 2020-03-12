@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D0969B72410AD2E0043A0D7 /* FundsDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0969B52410AD2E0043A0D7 /* FundsDetailTableViewCell.m */; };
-		1D0969B82410AD2E0043A0D7 /* FundsDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D0969B62410AD2E0043A0D7 /* FundsDetailTableViewCell.xib */; };
 		1D0969BB2410AE220043A0D7 /* WithdrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0969BA2410AE220043A0D7 /* WithdrawViewController.m */; };
 		1D0969CB2410B30C0043A0D7 /* CourseInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0969C12410B30B0043A0D7 /* CourseInfoTableViewCell.m */; };
 		1D0969CD2410B30C0043A0D7 /* CourseInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D0969C52410B30C0043A0D7 /* CourseInfoTableViewCell.xib */; };
@@ -255,6 +253,10 @@
 		1D4B25ED2418B35A00670F33 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4B254A2418B35900670F33 /* MASConstraint.m */; };
 		1D4B25EE2418B35A00670F33 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4B254C2418B35900670F33 /* MASViewConstraint.m */; };
 		1D4B25EF2418B35A00670F33 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4B254D2418B35900670F33 /* MASViewAttribute.m */; };
+		1D4B2713241A0FF100670F33 /* BalanceDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D4B2710241A0FF000670F33 /* BalanceDetailTableViewCell.xib */; };
+		1D4B2714241A0FF100670F33 /* BalanceDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4B2712241A0FF100670F33 /* BalanceDetailTableViewCell.m */; };
+		1D4B2717241A100A00670F33 /* BalanceDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4B2715241A100A00670F33 /* BalanceDetailModel.m */; };
+		1D4B271A241A101F00670F33 /* BalanceDetailListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4B2719241A101F00670F33 /* BalanceDetailListViewController.m */; };
 		1D6AFA2B241642E800146230 /* CouresPeriodTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6AFA2A241642E800146230 /* CouresPeriodTableViewCell.m */; };
 		1D6AFA2D241642F400146230 /* CouresPeriodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D6AFA2C241642F400146230 /* CouresPeriodTableViewCell.xib */; };
 		AA56068B23E942DC00F68017 /* UIImage+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = AA56068A23E942DC00F68017 /* UIImage+Category.m */; };
@@ -410,8 +412,7 @@
 		AA94750123FD0F4B005BE3A6 /* Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = AA94750023FD0F4B005BE3A6 /* Tool.m */; };
 		AA94750423FD10FD005BE3A6 /* CourseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA94750323FD10FD005BE3A6 /* CourseModel.m */; };
 		AA94750723FD13DF005BE3A6 /* CourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA94750623FD13DF005BE3A6 /* CourseDetailViewController.m */; };
-		AA94750E23FD53C3005BE3A6 /* FundsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA94750D23FD53C3005BE3A6 /* FundsDetailViewController.m */; };
-		AA94751123FD53CE005BE3A6 /* FundsDetailListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA94751023FD53CE005BE3A6 /* FundsDetailListViewController.m */; };
+		AA94750E23FD53C3005BE3A6 /* BalanceDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA94750D23FD53C3005BE3A6 /* BalanceDetailViewController.m */; };
 		AABACC2623F8263600B96B84 /* PeriodListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABACC2523F8263600B96B84 /* PeriodListViewController.m */; };
 		AABACC2F23F90F0D00B96B84 /* AddPublishPeriodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AABACC2E23F90F0D00B96B84 /* AddPublishPeriodViewController.m */; };
 		AABACC6D23F912F200B96B84 /* PGDatePicker+Date.m in Sources */ = {isa = PBXBuildFile; fileRef = AABACC3223F912F200B96B84 /* PGDatePicker+Date.m */; };
@@ -463,9 +464,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1D0969B42410AD220043A0D7 /* FundsDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FundsDetailTableViewCell.h; sourceTree = "<group>"; };
-		1D0969B52410AD2E0043A0D7 /* FundsDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FundsDetailTableViewCell.m; sourceTree = "<group>"; };
-		1D0969B62410AD2E0043A0D7 /* FundsDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FundsDetailTableViewCell.xib; sourceTree = "<group>"; };
 		1D0969B92410AE220043A0D7 /* WithdrawViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WithdrawViewController.h; sourceTree = "<group>"; };
 		1D0969BA2410AE220043A0D7 /* WithdrawViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WithdrawViewController.m; sourceTree = "<group>"; };
 		1D0969C02410B30B0043A0D7 /* CourseHeaderFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseHeaderFooterView.h; sourceTree = "<group>"; };
@@ -1000,6 +998,13 @@
 		1D4B254B2418B35900670F33 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		1D4B254C2418B35900670F33 /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
 		1D4B254D2418B35900670F33 /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
+		1D4B2710241A0FF000670F33 /* BalanceDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BalanceDetailTableViewCell.xib; sourceTree = "<group>"; };
+		1D4B2711241A0FF000670F33 /* BalanceDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BalanceDetailTableViewCell.h; sourceTree = "<group>"; };
+		1D4B2712241A0FF100670F33 /* BalanceDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BalanceDetailTableViewCell.m; sourceTree = "<group>"; };
+		1D4B2715241A100A00670F33 /* BalanceDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BalanceDetailModel.m; sourceTree = "<group>"; };
+		1D4B2716241A100A00670F33 /* BalanceDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BalanceDetailModel.h; sourceTree = "<group>"; };
+		1D4B2718241A101F00670F33 /* BalanceDetailListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BalanceDetailListViewController.h; sourceTree = "<group>"; };
+		1D4B2719241A101F00670F33 /* BalanceDetailListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BalanceDetailListViewController.m; sourceTree = "<group>"; };
 		1D6AFA29241642D100146230 /* CouresPeriodTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouresPeriodTableViewCell.h; sourceTree = "<group>"; };
 		1D6AFA2A241642E800146230 /* CouresPeriodTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouresPeriodTableViewCell.m; sourceTree = "<group>"; };
 		1D6AFA2C241642F400146230 /* CouresPeriodTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CouresPeriodTableViewCell.xib; sourceTree = "<group>"; };
@@ -1312,10 +1317,8 @@
 		AA94750323FD10FD005BE3A6 /* CourseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CourseModel.m; sourceTree = "<group>"; };
 		AA94750523FD13DF005BE3A6 /* CourseDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CourseDetailViewController.h; sourceTree = "<group>"; };
 		AA94750623FD13DF005BE3A6 /* CourseDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CourseDetailViewController.m; sourceTree = "<group>"; };
-		AA94750C23FD53C3005BE3A6 /* FundsDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FundsDetailViewController.h; sourceTree = "<group>"; };
-		AA94750D23FD53C3005BE3A6 /* FundsDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FundsDetailViewController.m; sourceTree = "<group>"; };
-		AA94750F23FD53CE005BE3A6 /* FundsDetailListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FundsDetailListViewController.h; sourceTree = "<group>"; };
-		AA94751023FD53CE005BE3A6 /* FundsDetailListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FundsDetailListViewController.m; sourceTree = "<group>"; };
+		AA94750C23FD53C3005BE3A6 /* BalanceDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BalanceDetailViewController.h; sourceTree = "<group>"; };
+		AA94750D23FD53C3005BE3A6 /* BalanceDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BalanceDetailViewController.m; sourceTree = "<group>"; };
 		AABACC2423F8263600B96B84 /* PeriodListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PeriodListViewController.h; sourceTree = "<group>"; };
 		AABACC2523F8263600B96B84 /* PeriodListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PeriodListViewController.m; sourceTree = "<group>"; };
 		AABACC2D23F90F0D00B96B84 /* AddPublishPeriodViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddPublishPeriodViewController.h; sourceTree = "<group>"; };
@@ -1644,7 +1647,7 @@
 				AA6C72DE23E9716500C79056 /* MyCourse */,
 				AA6D9E1423E91A5200B864F1 /* Release */,
 				1D0969BC2410AE2E0043A0D7 /* Withdraw */,
-				AA94750823FD539D005BE3A6 /* FundsDetail */,
+				AA94750823FD539D005BE3A6 /* BalanceDetail */,
 				AA749EBE23F589DB00DBA896 /* Show */,
 				AA63CCB723F3CB99000BACED /* Auth */,
 				AA63CD7223F4FE8B000BACED /* BankCard */,
@@ -3568,22 +3571,22 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		AA94750823FD539D005BE3A6 /* FundsDetail */ = {
+		AA94750823FD539D005BE3A6 /* BalanceDetail */ = {
 			isa = PBXGroup;
 			children = (
 				AA94750B23FD53B8005BE3A6 /* Controller */,
 				AA94750A23FD53B4005BE3A6 /* Model */,
 				AA94750923FD53B0005BE3A6 /* View */,
 			);
-			path = FundsDetail;
+			path = BalanceDetail;
 			sourceTree = "<group>";
 		};
 		AA94750923FD53B0005BE3A6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1D0969B42410AD220043A0D7 /* FundsDetailTableViewCell.h */,
-				1D0969B52410AD2E0043A0D7 /* FundsDetailTableViewCell.m */,
-				1D0969B62410AD2E0043A0D7 /* FundsDetailTableViewCell.xib */,
+				1D4B2711241A0FF000670F33 /* BalanceDetailTableViewCell.h */,
+				1D4B2712241A0FF100670F33 /* BalanceDetailTableViewCell.m */,
+				1D4B2710241A0FF000670F33 /* BalanceDetailTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3591,6 +3594,8 @@
 		AA94750A23FD53B4005BE3A6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1D4B2716241A100A00670F33 /* BalanceDetailModel.h */,
+				1D4B2715241A100A00670F33 /* BalanceDetailModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3598,10 +3603,10 @@
 		AA94750B23FD53B8005BE3A6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				AA94750C23FD53C3005BE3A6 /* FundsDetailViewController.h */,
-				AA94750D23FD53C3005BE3A6 /* FundsDetailViewController.m */,
-				AA94750F23FD53CE005BE3A6 /* FundsDetailListViewController.h */,
-				AA94751023FD53CE005BE3A6 /* FundsDetailListViewController.m */,
+				AA94750C23FD53C3005BE3A6 /* BalanceDetailViewController.h */,
+				AA94750D23FD53C3005BE3A6 /* BalanceDetailViewController.m */,
+				1D4B2718241A101F00670F33 /* BalanceDetailListViewController.h */,
+				1D4B2719241A101F00670F33 /* BalanceDetailListViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -3788,13 +3793,13 @@
 				AA63CDFF23F51B0C000BACED /* UserInfoTableViewCell.xib in Resources */,
 				AA63CDF723F51997000BACED /* UserAvatarTableViewCell.xib in Resources */,
 				AA6C72E623EABEFC00C79056 /* CourseTableViewCell.xib in Resources */,
-				1D0969B82410AD2E0043A0D7 /* FundsDetailTableViewCell.xib in Resources */,
 				1D4B257D2418B35900670F33 /* LICENSE.md in Resources */,
 				AA6C736123F2D93C00C79056 /* MBProgressHUD.bundle in Resources */,
 				AA63CDC623F50F4B000BACED /* MJRefresh.bundle in Resources */,
 				1D0969CD2410B30C0043A0D7 /* CourseInfoTableViewCell.xib in Resources */,
 				1D4B25AE2418B35A00670F33 /* LICENSE in Resources */,
 				AA63CD6C23F42689000BACED /* HXPhotoPicker.bundle in Resources */,
+				1D4B2713241A0FF100670F33 /* BalanceDetailTableViewCell.xib in Resources */,
 				AABACC8223F912F200B96B84 /* PGDatePicker.bundle in Resources */,
 				1D6AFA2D241642F400146230 /* CouresPeriodTableViewCell.xib in Resources */,
 				1D37347023C57EC60063E036 /* Assets.xcassets in Resources */,
@@ -4023,6 +4028,7 @@
 				1D4B25A12418B35A00670F33 /* CALayer+SJBaseVideoPlayerExtended.m in Sources */,
 				1D4B256C2418B35900670F33 /* UIView+SJAnimationAdded.m in Sources */,
 				1D4B25BE2418B35A00670F33 /* SJScrollToolbarConfiguration.m in Sources */,
+				1D4B271A241A101F00670F33 /* BalanceDetailListViewController.m in Sources */,
 				AABACC7423F912F200B96B84 /* NSCalendar+PGCurrent.m in Sources */,
 				1D3736CB23C588510063E036 /* SDWebImageManager.m in Sources */,
 				AA63CD3923F42689000BACED /* HXPhotoPreviewBottomView.m in Sources */,
@@ -4088,6 +4094,7 @@
 				AA63CD6923F42689000BACED /* HXAlbumlistView.m in Sources */,
 				1D4B25802418B35900670F33 /* SJBaseVideoPlayer.m in Sources */,
 				1D4B25D52418B35A00670F33 /* SJSQLite3+FoundationExtended.m in Sources */,
+				1D4B2717241A100A00670F33 /* BalanceDetailModel.m in Sources */,
 				1D3736F823C588510063E036 /* UIView+WebCacheOperation.m in Sources */,
 				1D3734F323C583240063E036 /* SceneDelegate.m in Sources */,
 				AA63CDE023F50F4B000BACED /* MJPropertyKey.m in Sources */,
@@ -4143,9 +4150,8 @@
 				1D37350C23C586EB0063E036 /* BaseNavigationController.m in Sources */,
 				AA5606A323E9475300F68017 /* SGPageContentCollectionView.m in Sources */,
 				1D4B25AA2418B35A00670F33 /* SJPlaybackRecordSaveHandler.m in Sources */,
-				1D0969B72410AD2E0043A0D7 /* FundsDetailTableViewCell.m in Sources */,
 				1D4B25852418B35900670F33 /* AVAsset+SJAVMediaExport.m in Sources */,
-				AA94750E23FD53C3005BE3A6 /* FundsDetailViewController.m in Sources */,
+				AA94750E23FD53C3005BE3A6 /* BalanceDetailViewController.m in Sources */,
 				1D4B258A2418B35900670F33 /* SJPrompt.m in Sources */,
 				1D3736E423C588510063E036 /* SDAnimatedImageRep.m in Sources */,
 				AA63CD6723F42689000BACED /* HXAlbumModel.m in Sources */,
@@ -4200,7 +4206,6 @@
 				1D4B25992418B35A00670F33 /* SJDeviceVolumeAndBrightnessManager.m in Sources */,
 				1D3736FF23C588510063E036 /* SDImageAssetManager.m in Sources */,
 				AA6C735723F2D73700C79056 /* IQNSArray+Sort.m in Sources */,
-				AA94751123FD53CE005BE3A6 /* FundsDetailListViewController.m in Sources */,
 				1D4B25B92418B35A00670F33 /* SJUTRegexHandler.m in Sources */,
 				AA63CD6B23F42689000BACED /* HXPreviewVideoView.m in Sources */,
 				AA63CD6523F42689000BACED /* HXCustomNavigationController.m in Sources */,
@@ -4220,6 +4225,7 @@
 				AA63CD5523F42689000BACED /* HXPhotoPreviewVideoViewCell.m in Sources */,
 				1D4B25DF2418B35A00670F33 /* SJBaseViewController.m in Sources */,
 				1D3736D423C588510063E036 /* SDImageLoader.m in Sources */,
+				1D4B2714241A0FF100670F33 /* BalanceDetailTableViewCell.m in Sources */,
 				1D3736FD23C588510063E036 /* MKAnnotationView+WebCache.m in Sources */,
 				1D4B259D2418B35A00670F33 /* SJRotationManager.m in Sources */,
 				1D4B25A32418B35A00670F33 /* UIViewController+SJBaseVideoPlayerExtended.m in Sources */,

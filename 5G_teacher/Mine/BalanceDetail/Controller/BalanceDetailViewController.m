@@ -1,23 +1,23 @@
 //
-//  FundsDetailViewController.m
+//  BalanceDetailViewController.m
 //  5G_teacher
 //
 //  Created by 毛文豪 on 2020/2/19.
 //  Copyright © 2020 jiuge. All rights reserved.
 //
 
-#import "FundsDetailViewController.h"
-#import "FundsDetailListViewController.h"
+#import "BalanceDetailViewController.h"
+#import "BalanceDetailListViewController.h"
 #import "SGPagingView.h"
 
-@interface FundsDetailViewController ()<SGPageTitleViewDelegate, SGPageContentScrollViewDelegate>
+@interface BalanceDetailViewController ()<SGPageTitleViewDelegate, SGPageContentScrollViewDelegate>
 
 @property (nonatomic, strong) SGPageTitleView *pageTitleView;
 @property (nonatomic, strong) SGPageContentScrollView *pageContentScrollView;
 
 @end
 
-@implementation FundsDetailViewController
+@implementation BalanceDetailViewController
 
 - (void)viewDidLoad
 {
@@ -43,7 +43,7 @@
     
     NSMutableArray * childArr = [NSMutableArray array];
     for (int i = 0; i < titleArr.count; i++) {
-        FundsDetailListViewController * courseListVC = [[FundsDetailListViewController alloc] init];
+        BalanceDetailListViewController * courseListVC = [[BalanceDetailListViewController alloc] init];
         [childArr addObject:courseListVC];
     }
     CGFloat contentViewHeight = MScreenHeight - MStatusBarH - MNavBarH - CGRectGetMaxY(self.pageTitleView.frame);

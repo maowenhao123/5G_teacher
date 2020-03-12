@@ -132,6 +132,31 @@
 {
     [self.view endEditing:YES];
     
+    NSInteger money = [self.moneyTF.text integerValue];
+    if (money == 0) {
+        [MBProgressHUD showError:@"请输入提款金额"];
+        return;
+    }
+    
+    NSDictionary *parameters = @{
+        @"extractMoney": @(money)
+    };
+    waitingView
+    [[MHttpTool shareInstance] postWithParameters:parameters url:@"/user/auth/lecturer/profit/save" success:^(id json) {
+        [MBProgressHUD hideHUDForView:self.view];
+        if (SUCCESS) {
+            [MBProgressHUD showSuccess:@"提现成功"];
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"WithdrawSuccess" object:nil];
+            [self.navigationController popViewControllerAnimated:YES];
+        }else
+        {
+            ShowErrorView
+        }
+    } failure:^(NSError *error) {
+        MLog(@"error:%@",error);
+        [MBProgressHUD hideHUDForView:self.view];
+    }];
 }
 
 @end

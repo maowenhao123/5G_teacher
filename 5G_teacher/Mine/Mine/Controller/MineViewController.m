@@ -33,6 +33,7 @@
     [self getUserData];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getUserData) name:@"LoginSuccess" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getUserData) name:@"UpdateUserInfo" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getUserData) name:@"WithdrawSuccess" object:nil];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle
