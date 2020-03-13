@@ -10,6 +10,7 @@
 #import "AddVideoPeriodViewController.h"
 #import "AddPublishPeriodViewController.h"
 #import "PeriodTableViewCell.h"
+#import "UITableView+NoData.h"
 
 @interface PeriodListViewController ()<UITableViewDelegate, UITableViewDataSource, PeriodTableViewCellDelegate>
 
@@ -158,6 +159,7 @@
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    [tableView showNoDataWithRowCount:self.classArray.count];
     return self.classArray.count;
 }
 

@@ -62,8 +62,8 @@
         cell.textLabel.textColor = MBlackTextColor;
         cell.detailTextLabel.font = [UIFont systemFontOfSize:14];
         cell.detailTextLabel.textColor = MGrayTextColor;
+        cell.imageView.backgroundColor = MPlaceholderColor;
     }
-    cell.imageView.image = [UIImage imageNamed:@"tabber_groupon_selected"];
     if (indexPath.row == 0) {
         cell.textLabel.text = @"视频课";
         cell.detailTextLabel.text = @"上传课程录播视频，学员购买或免费观看";

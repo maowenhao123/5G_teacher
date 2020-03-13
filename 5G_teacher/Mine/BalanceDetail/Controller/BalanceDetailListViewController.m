@@ -9,6 +9,7 @@
 #import "BalanceDetailListViewController.h"
 #import "BalanceDetailTableViewCell.h"
 #import "UserModel.h"
+#import "UITableView+NoData.h"
 
 @interface BalanceDetailListViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -107,6 +108,7 @@
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    [tableView showNoDataWithRowCount:self.balanceArray.count];
     return self.balanceArray.count;
 }
 

@@ -40,6 +40,15 @@
     self.delegate = self;
     [self setupTabbars];
     [self getCategoryData];
+    //接收去首页的通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gotoHomePage) name:@"GotoHomePage" object:nil];
+}
+
+#pragma mark - 跳转
+//去首页
+- (void)gotoHomePage
+{
+    self.selectedIndex = 0;
 }
 
 #pragma mark - 添加控制器
@@ -72,7 +81,7 @@
 
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
 {
-    if(viewController.view.tag == 2)
+    if((viewController.view.tag == 2 || viewController.view.tag == 3) && MStringIsEmpty(Token))
     {
         LoginViewController * loginVC = [[LoginViewController alloc] init];
         BaseNavigationController * loginNVC = [[BaseNavigationController alloc] initWithRootViewController:loginVC];

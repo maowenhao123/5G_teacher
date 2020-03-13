@@ -10,6 +10,7 @@
 #import "CourseDetailViewController.h"
 #import "CourseHeaderFooterView.h"
 #import "CourseTableViewCell.h"
+#import "UITableView+NoData.h"
 
 @interface CourseListViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -25,16 +26,16 @@
 {
     [super viewDidLoad];
     [self setupUI];
-//    waitingView
-//    self.pageCurrent = 1;
-//    [self getCourseData];
+    waitingView
+    self.pageCurrent = 1;
+    [self getCourseData];
 }
 
 #pragma mark - 请求数据
 - (void)getCourseData
 {
     NSDictionary *parameters = @{
-        @"date ": self.date,
+        @"date": self.date,
         @"pageCurrent": @(self.pageCurrent),
         @"pageSize": MPageSize
     };
@@ -114,6 +115,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    [tableView showNoDataWithRowCount:self.courseArray.count];
     return 5;
 //    return self.courseArray.count;
 }

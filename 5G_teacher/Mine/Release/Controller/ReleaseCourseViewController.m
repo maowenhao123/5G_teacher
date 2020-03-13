@@ -370,9 +370,15 @@
     [[MHttpTool shareInstance] postWithParameters:parameters_mu url:url success:^(id json) {
         [MBProgressHUD hideHUDForView:self.view];
         if (SUCCESS) {
-            [MBProgressHUD showSuccess:@"发布成功"];
             PeriodListViewController * classListVC = [[PeriodListViewController alloc] init];
-            classListVC.courseId = self.courseId;
+            if (self.courseId > 0) {
+                [MBProgressHUD showSuccess:@"编辑成功"];
+                classListVC.courseId = self.courseId;
+            }else
+            {
+                [MBProgressHUD showSuccess:@"发布成功"];
+                classListVC.courseId = [json[@"data"][@"id"] integerValue];
+            }
             classListVC.courseType = self.courseType;
             [self.navigationController pushViewController:classListVC animated:YES];
         }else

@@ -9,6 +9,7 @@
 #import "MyCourseListViewController.h"
 #import "CourseDetailViewController.h"
 #import "CourseTableViewCell.h"
+#import "UITableView+NoData.h"
 
 @interface MyCourseListViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -51,7 +52,7 @@
     [[MHttpTool shareInstance] postWithParameters:parameters url:@"/course/auth/course/audit/list" success:^(id json) {
         [MBProgressHUD hideHUDForView:self.view];
         if (SUCCESS) {
-           NSArray * dataArray = [CourseModel mj_objectArrayWithKeyValuesArray:json[@"data"][@"list"]];
+            NSArray * dataArray = [CourseModel mj_objectArrayWithKeyValuesArray:json[@"data"][@"list"]];
             if ([self.tableView.mj_header isRefreshing]) {
                 [self.courseArray removeAllObjects];
             }
@@ -63,7 +64,7 @@
             {
                 [self.tableView.mj_footer endRefreshing];
             }
-           [self.tableView reloadData];
+            [self.tableView reloadData];
         }else
         {
             ShowErrorView
@@ -118,6 +119,7 @@
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    [tableView showNoDataWithRowCount:self.courseArray.count];
     return self.courseArray.count;
 }
 

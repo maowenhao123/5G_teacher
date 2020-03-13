@@ -115,7 +115,7 @@
         [self addSubview:courseView];
         
         UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake((courseViewW - imageViewWH) / 2, 5, imageViewWH, imageViewWH)];
-        imageView.image = [UIImage imageNamed:@"tabber_groupon_selected"];
+        imageView.backgroundColor = MPlaceholderColor;
         [courseView addSubview:imageView];
         
         UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(imageView.frame) + 5, courseViewW, 20)];

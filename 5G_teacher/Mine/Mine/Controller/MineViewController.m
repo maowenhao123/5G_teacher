@@ -126,9 +126,9 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.textLabel.font = [UIFont systemFontOfSize:16];
         cell.textLabel.textColor = MBlackTextColor;
+        cell.imageView.backgroundColor = MPlaceholderColor;
     }
     if (indexPath.section == 0) {
-        cell.imageView.image = [UIImage imageNamed:@"tabber_groupon_selected"];
         if (indexPath.row == 0) {
             cell.textLabel.text = @"展示自我";
         }else if (indexPath.row == 1)
@@ -140,7 +140,6 @@
         }
     }else if (indexPath.section == 1)
     {
-        cell.imageView.image = [UIImage imageNamed:@"tabber_groupon_selected"];
         if (indexPath.row == 0) {
             cell.textLabel.text = @"客服";
         }else if (indexPath.row == 1)
